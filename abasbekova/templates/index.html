@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <div class="wrapper">
+        <h1>Malika</h1>
+      </div>
+    </header>
+    <main>
+      <div class="wrapper">
+        <div class="cards">
+          <div class="card">
+            <img src="{% static 'css/image.png' %}" alt="" width="400px" />
+            <div class="box">
+              <h1>Malika</h1>
+              <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Enim
+              quidem, aut cupiditate magni asperiores iure laborum, pariatur
+              commodi praesentium debitis doloremque cum quo impedit repellat
+              voluptas beatae dolore, officia ex?
+            </p
+              >
+            </div>
+          </div>
+          {% for i in add %}
+          <div class="card">
+            <img src="{{ i.image.url }}" alt="" width="400px" />
+            <div class="box">
+              <h1>{{i.title}}</h1>
+              <p>
+                {{i.text}}
+            </p>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="wrapper">
+        <h1>Footer</h1>
+      </div>
+    </footer>
+  </body>
+</html>
